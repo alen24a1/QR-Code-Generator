@@ -541,4 +541,11 @@ def generate():
     })
 
 if __name__ == '__main__':
+    import threading
+    import webbrowser
+
+    def open_browser():
+        webbrowser.open('http://127.0.0.1:5000')
+
+    threading.Timer(1.0, open_browser).start()
     app.run(debug=True, host='0.0.0.0', port=5000)
